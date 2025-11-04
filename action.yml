@@ -1,0 +1,48 @@
+name: heim-exec
+description: Setup the heim toolkit for github actions
+author: NorNor
+
+# Add your action's branding here. This will appear on the GitHub Marketplace.
+branding:
+  icon: code
+  color: purple
+
+# Define your inputs here.
+inputs:
+  token:
+    description: Heim ci token
+    required: false
+  path:
+    description: Path to the component to build
+    required: false
+  dev:
+    description: Deploy a development build
+    required: false
+    default: 'false'
+  host:
+    description: deploy to a different host
+    required: false
+  envs:
+    description: Set commandline environment values
+    required: false
+  isWorkspace:
+    description: Deploy a workspace
+    required: false
+    default: 'false'
+  component:
+    description: Target component in a workspace
+    required: false
+  version:
+    description: Version to use
+    required: false
+  verbose:
+    description: Run with the verbose flag
+    required: false
+  failOnStdErr:
+    description: Should the execution fail on stderr
+    required: false
+    default: 'false'
+
+runs:
+  using: node24
+  main: dist/index.js
