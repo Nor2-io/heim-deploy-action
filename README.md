@@ -1,7 +1,6 @@
-# Heim setup
+# Heim deply
 
-Action to setup heim on a github runner.
-It also sets the HEIM_HOME variable and adds heim to the path.
+Deploy your heim application using the heim cli
 
 
 ## Inputs
