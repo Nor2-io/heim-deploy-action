@@ -1,5 +1,5 @@
-name: heim-exec
-description: Setup the heim toolkit for github actions
+name: heim-deploy
+description: Deploy an application to Heim
 author: NorNor
 
 # Add your action's branding here. This will appear on the GitHub Marketplace.
