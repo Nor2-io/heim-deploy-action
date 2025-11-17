@@ -1,12 +1,14 @@
 ![Heim Logo](/assets/heim.svg)
 
-[\[Getting Started\]](https://cloud.heim.dev/heim/docs/start-here/getting-started/) [\[Documentation\]](https://cloud.heim.dev/heim/docs/)
+[\[Getting Started\]](https://cloud.heim.dev/heim/docs/start-here/getting-started/)
+[\[Documentation\]](https://cloud.heim.dev/heim/docs/)
 
 # Heim deploy
 
 Deploy your heim application using the heim cli
 
 ## Usage
+
 ```Yaml
 # Latest version
 - name: Heim Deploy
@@ -31,7 +33,7 @@ Deploy your heim application using the heim cli
     token: ${{ secrets.HEIM_CI_TOKEN }}
     version: "1.2.2"
 
-# Full 
+# Full
 - name: Heim Deploy
   id: heim-deploy
   uses: Nor2-io/heim-deploy-action@v1
