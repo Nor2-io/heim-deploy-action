@@ -1,6 +1,57 @@
-# Heim deply
+![Heim Logo](/assets/heim.svg)
+
+[\[Getting Started\]](https://cloud.heim.dev/heim/docs/start-here/getting-started/)
+[\[Documentation\]](https://cloud.heim.dev/heim/docs/)
+
+# Heim deploy
 
 Deploy your heim application using the heim cli
+
+## Usage
+
+```Yaml
+# Latest version
+- name: Heim Deploy
+  id: heim-deploy
+  uses: Nor2-io/heim-deploy-action@v1
+  with:
+    token: ${{ secrets.HEIM_CI_TOKEN }}
+
+# Major version
+- name: Heim Deploy
+  id: heim-deploy
+  uses: Nor2-io/heim-deploy-action@v1
+  with:
+    token: ${{ secrets.HEIM_CI_TOKEN }}
+    version: v1
+
+# Specific version
+- name: Heim Deploy
+  id: heim-deploy
+  uses: Nor2-io/heim-deploy-action@v1
+  with:
+    token: ${{ secrets.HEIM_CI_TOKEN }}
+    version: "1.2.2"
+
+# Full
+- name: Heim Deploy
+  id: heim-deploy
+  uses: Nor2-io/heim-deploy-action@v1
+  with:
+    token: ${{ secrets.HEIM_CI_TOKEN }}
+    path: 'path/to/component'
+    dev: false
+    host:
+      addr: '127.0.0.1'
+      port: 443
+    envs:
+      ENV1: 'VALUE1'
+    isWorkspace: false
+    component: 'wasm-component-1'
+    version: 'current'
+    verbose: false
+    failOnStdErr: false
+```
 
 ## Inputs
 
