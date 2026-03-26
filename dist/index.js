@@ -32634,9 +32634,12 @@ async function readInputs() {
         throw new Error('HEIM_CI_TOKEN or token is required for deployment');
     }
     await findHeim();
-    const args = ['deploy', '--cloud'];
+    const args = ['deploy'];
     if (coreExports.getBooleanInput('dev', { required: false })) {
         args.push('--dev');
+    }
+    else {
+        args.push('--release');
     }
     if (coreExports.getBooleanInput('verbose', { required: false })) {
         args.push('--verbose');
@@ -32657,6 +32660,9 @@ async function readInputs() {
         const hostJson = JSON.parse(host);
         args.push('--host', hostJson.addr);
         args.push('--port', `${hostJson.port}`);
+    }
+    else {
+        args.push('--cloud');
     }
     const envs = coreExports.getInput('envs', { required: false });
     if (envs) {

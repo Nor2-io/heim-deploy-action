@@ -163,10 +163,10 @@ async function readInputs(): Promise<IHeimInputs> {
     const hostJson: IHeimHost = JSON.parse(host)
     args.push('--host', hostJson.addr)
     args.push('--port', `${hostJson.port}`)
-  } else {                                                  
-      args.push('--cloud')                             
-  } 
-  
+  } else {
+    args.push('--cloud')
+  }
+
   const envs = core.getInput('envs', { required: false })
   if (envs) {
     const obj: object = JSON.parse(envs)
