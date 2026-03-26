@@ -136,9 +136,11 @@ async function readInputs(): Promise<IHeimInputs> {
 
   await findHeim()
 
-  const args: string[] = ['deploy', '--cloud']
+  const args: string[] = ['deploy']
   if (core.getBooleanInput('dev', { required: false })) {
     args.push('--dev')
+  } else {
+    args.push('--release')
   }
 
   if (core.getBooleanInput('verbose', { required: false })) {
@@ -161,7 +163,10 @@ async function readInputs(): Promise<IHeimInputs> {
     const hostJson: IHeimHost = JSON.parse(host)
     args.push('--host', hostJson.addr)
     args.push('--port', `${hostJson.port}`)
-  }
+  } else {                                                  
+      args.push('--cloud')                             
+  } 
+  
   const envs = core.getInput('envs', { required: false })
   if (envs) {
     const obj: object = JSON.parse(envs)
